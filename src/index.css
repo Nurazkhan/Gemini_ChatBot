@@ -1,0 +1,123 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #4A4A4A;
+    outline: none;
+    
+    font-family: "Montserrat", sans-serif;
+}
+input{box-sizing:border-box}
+.bg-primary{
+    background-color: #F4F4F6;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.dialogueWindow{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border-radius: 40px;
+background: #f4f4f6;
+box-shadow: inset 8px 8px 20px #7a7a7b,
+            inset -8px -8px 20px #ffffff;
+            margin: 1% 2% ;
+            width: 60%;
+            
+}
+.botWindow{
+    border-radius: 40px;
+background: linear-gradient(145deg, #ffffff, #dcdcdd);
+box-shadow:  8px 8px 20px #7a7a7b,
+             -8px -8px 20px #ffffff;
+             width: 32%;
+             margin: 1% 2% ;
+}
+
+
+
+.form{
+    width: 100%;
+    height: 8vh;
+    margin-bottom: 1%;
+    border-radius: 0 0 40px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.formInput{
+    height: 70%;
+    border: 0;
+    margin: 0.5% 0% 0.5% 5%;
+    border-radius: 40px 40px;
+ padding: 2%;
+
+width: 80%;
+ background: #f4f4f6;
+ box-shadow: inset 5px 5px 10px #818195,
+             inset -5px -5px 10px #f4f3f3;
+
+}
+
+.formButton{
+   border-radius: 40px; 
+   height: 80%;
+   border: none ;
+   width: 15%;
+   padding: 1%;
+   margin: 0.5% 2.5% 0.5% 1%;
+   cursor: pointer;
+   border-radius: 40px;
+   background: linear-gradient(145deg, #0063ed, #7ac8ff);
+box-shadow:  5px 5px 8px #c3c3c5,
+             -5px -5px 8px #ffffff;
+             font-weight:bold ;
+             color: #fff;
+}
+
+.messageUser{
+    border-radius: 40px;
+background: linear-gradient(145deg, #0063ed, #7ac8ff);
+box-shadow:  5px 5px 8px #c3c3c5,
+             -5px -5px 8px #ffffff;
+    min-width: 30%;
+    max-width: 70%;
+    width: fit-content;
+    align-self: flex-end;
+    padding: 2%;
+    justify-content: center;
+    margin: 1% 2% 1% 0%;
+    font-weight:bold ;
+             color: #fff;
+}
+
+.messageBot{
+    border-radius: 40px;
+    background: linear-gradient(145deg, #dcdcdd, #ffffff);
+    box-shadow:  5px 5px 8px #c3c3c5,
+                 -5px -5px 8px #ffffff;
+        min-width: 30%;
+        max-width: 70%;
+        width: fit-content;
+        
+        padding: 2%;
+        justify-content: center;
+        
+        margin: 1% 0% 1% 2%;
+        
+}
+.chat{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 90%;
+    border-radius: 40px 40px 0 0;
+    
+}
+::-webkit-scrollbar{
+    width: 0;
+}
