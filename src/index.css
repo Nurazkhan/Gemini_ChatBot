@@ -29,14 +29,7 @@ box-shadow: inset 8px 8px 20px #7a7a7b,
             width: 60%;
             
 }
-.botWindow{
-    border-radius: 40px;
-background: linear-gradient(145deg, #ffffff, #dcdcdd);
-box-shadow:  8px 8px 20px #7a7a7b,
-             -8px -8px 20px #ffffff;
-             width: 32%;
-             margin: 1% 2% ;
-}
+
 
 
 
@@ -83,7 +76,7 @@ box-shadow:  5px 5px 8px #c3c3c5,
     border-radius: 40px;
 background: linear-gradient(145deg, #0063ed, #7ac8ff);
 box-shadow:  5px 5px 8px #c3c3c5,
-             -5px -5px 8px #ffffff;
+             -1px -1px 4px #ffffff;
     min-width: 30%;
     max-width: 70%;
     width: fit-content;
@@ -120,4 +113,45 @@ box-shadow:  5px 5px 8px #c3c3c5,
 }
 ::-webkit-scrollbar{
     width: 0;
+}
+
+.img{
+    width: 70%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10vh;
+    background: linear-gradient(145deg, #ffffff, #dcdcdd);
+    box-shadow:  6px 6px 12px #89898a,
+                 -6px -6px 12px #ffffff;
+    
+}
+.botWindow{
+    border-radius: 40px;
+background: linear-gradient(145deg, #ffffff, #dcdcdd);
+box-shadow:  8px 8px 20px #7a7a7b,
+             -8px -8px 20px #ffffff;
+             width: 32%;
+             margin: 1% 2% ;
+   align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+}
+.roles{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  background: #f4f4f6;
+box-shadow:  6px 6px 12px #89898a,
+             -6px -6px 12px #ffffff;
+             width: 90%;
+             margin-top: 5vh;
+             padding: 5%;
+             border-radius: 32px;
+}
+.imgroles{
+    border-radius: 50%;
+    margin:0 3%;
 }
