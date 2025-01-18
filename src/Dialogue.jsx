@@ -4,7 +4,7 @@ import { useState } from "react";
 import Chat from "./Chat";
 
 
-
+let chatd = document.getElementById('chat')
 export default function Dialogue(props) {
 
   return (
@@ -17,6 +17,7 @@ export default function Dialogue(props) {
           e.preventDefault();
           props.askGem(props.prompt, props.chatRole);
           props.setPrompt("");
+          chatd.scrollTo(0,1000)
         }}
         className="form"
       >

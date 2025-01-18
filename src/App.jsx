@@ -2,11 +2,13 @@ import React from 'react'
 import './App.css'
 import Bot from './Bot.jsx'
 import Dialogue from './Dialogue'
+import Modal from './components/Modal.jsx'
 import { API_KEY } from '../config.js';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useState } from "react";
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+let chatobject = document.getElementById('chat');
 const Com = [
   {
       "role": "user",
@@ -70,18 +72,30 @@ const roleBasics = {
   'BusinessBot': busBasic,
   'TherapistBot': therapistBasic,
 }
+const availableImages =[
+  'CommonBot.webp',
+  'BusinessBot.webp',
+  'TherapistBot.webp',
+]
+console.log(Object.keys(sessionStorage))
+
+for(let key of Object.keys(sessionStorage)) {
+  console.log(sessionStorage[key])
+  roleBasics[key]= roleBasics[key] || JSON.parse( sessionStorage[key])['_history']
+}
 
 function App() {
 let [chatRole,setchatRole] = useState('CommonBot');
   const [prompt, setPrompt] = useState("");
 
+  const [show, setShow] = useState(false)
   const [history, setHistory] = useState(() => {
-    let CommonBot = localStorage.CommonBot;
+    let CommonBot = sessionStorage.CommonBot;
     let hiExists = CommonBot ? JSON.parse(CommonBot) : null;
     return hiExists ? hiExists['_history'] : Com;
   });
   const changeRole = async (role) =>{
-    const roleObject = localStorage[role]
+    const roleObject = sessionStorage[role]
     let roleObjectexits = roleObject ? JSON.parse(roleObject) : null;
     let final = roleObjectexits ? roleObjectexits['_history'] : roleBasics[role];
     setHistory(final)
@@ -113,17 +127,41 @@ let [chatRole,setchatRole] = useState('CommonBot');
     setHistory(updatedHistoryWithResponse);
   
    
-    localStorage[role] = JSON.stringify({ _history: updatedHistoryWithResponse });
+    sessionStorage[role] = JSON.stringify({ _history: updatedHistoryWithResponse });
     console.log(updatedHistoryWithResponse);
+    chatobject.scrollTo(0,1000)
   };
 
-
+const addNewRole = async(name, info, doNotAnswer, doNot ) => {
+   let additional = ''
+  if (doNotAnswer){
+    additional = "You must answer only with given information. If you dont know answer then you must reply "+ doNot
+  }
+let customhistory = [{
+  "role": "user",
+  "parts": [
+      {
+          "text": "Hello, I am a new role named "+name+". If someone asks you who you are you answer them, I will be "+name+". Here is the information for you" + info + additional
+      }
+  ]  
+},
+ {
+  "role": "model",
+  "parts": [
+      {
+          "text": "Okay, I understand.  If you ask me who I am, I will respond: \"I am a "+name+" bot.\"  "
+      }
+  ]
+ }]
+roleBasics[name]=customhistory;
+}
 
 
   return (
     <div className='bg-primary'>
       <Dialogue hist = {history} askGem={askGem} prompt ={prompt} setPrompt={setPrompt} chatRole={chatRole} />
-      <Bot changeRole = {changeRole} setchatRole={setchatRole} chatRole={chatRole} />
+      <Bot changeRole = {changeRole} setchatRole={setchatRole} chatRole={chatRole} show={show} setShow={setShow} roleBasics={roleBasics} availableImages={availableImages}/>
+      {show && <Modal setShow={setShow} addNewRole={addNewRole}/>}
     </div>
   )
 }

@@ -116,12 +116,12 @@ box-shadow:  5px 5px 8px #c3c3c5,
 }
 
 .img{
-    width: 70%;
+    width: 60%;
     height: auto;
     max-width: 100%;
     object-fit: cover;
     border-radius: 50%;
-    margin-top: 10vh;
+    margin: 7vh 0 2vh 0;
     background: linear-gradient(145deg, #ffffff, #dcdcdd);
     box-shadow:  6px 6px 12px #89898a,
                  -6px -6px 12px #ffffff;
@@ -154,4 +154,70 @@ box-shadow:  6px 6px 12px #89898a,
 .imgroles{
     border-radius: 50%;
     margin:0 3%;
+}
+
+.overlay{
+    background-color: #4A4A4A;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal{
+    background-color: #000000;
+    border-radius: 46px;
+    box-shadow:  10px 10px 20px #89898a,
+                 -10px -10px 20px #ffffff;
+    padding: 1%;
+    min-width: 30vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.modal input{
+  width: 80%;
+  margin: 5% 0 5% 0;
+  outline: none;
+  border: none;
+  padding: 2%;
+  border-radius: 10px;
+}
+.checkbox{
+    margin: 1% !important;
+    align-self: self-start
+}
+.ta{
+    resize: none;
+    width: 80%;
+    margin: 5% 0 5% 0;
+    outline: none;
+    border: none;
+    padding: 2%;
+    border-radius: 10px;
+}
+.btn-2{
+    background-color: #ffffff;
+    outline: none;
+    border: none;
+    color:#000000;
+    padding: 2.5%;
+    border-radius: 24px;
+    transition: 0.5s ease;
+    margin-top: 5%;
+}
+.btn-2:hover{
+background-color: #f4f3f3;
+}
+.btn-2:active{
+    transform: scale(1.05);
+
 }
