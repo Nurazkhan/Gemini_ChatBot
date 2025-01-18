@@ -1,7 +1,7 @@
-# Gemini Chat V0.75⚛️ Roles System Beta
+# Gemini Chat V1.0⚛️ Roles System Beta
 
 Gemini Chat based on neuromorphism style 🌵
-![image](https://github.com/user-attachments/assets/eec09fb2-a39e-459d-94fe-915aaec0287f)
+![image](https://github.com/user-attachments/assets/43070d47-85c9-433e-8097-f7757dff3666)
 
 
 * local storage 🏦
@@ -16,5 +16,5 @@ Gemini Chat based on neuromorphism style 🌵
 
 ** NOTE THAT IT"S BETA VERSION**
 ~~in future I will add role functions, so you can store different characters of gemini.~~
-In future, i will develop role functions, so you can create your own trained models.
+~~In future, i will develop role functions, so you can create your own trained models.~~
 
