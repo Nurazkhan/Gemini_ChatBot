@@ -1,10 +1,12 @@
-# Gemini Chat V0.5⚛️
+# Gemini Chat V0.75⚛️ Roles System Beta
 
 Gemini Chat based on neuromorphism style 🌵
-![image](https://github.com/user-attachments/assets/26c1e271-ed70-4561-9515-a7fbc8cef7f7)
+![image](https://github.com/user-attachments/assets/eec09fb2-a39e-459d-94fe-915aaec0287f)
+
 
 * local storage 🏦
-* react (SPA) 
+* react (SPA)
+* Roles system 
 
 1. to use this app install Repo
 2. Install nodepackageManage
@@ -13,4 +15,6 @@ Gemini Chat based on neuromorphism style 🌵
 5. type to the terminal `npm run dev` and enjoy!
 
 ** NOTE THAT IT"S BETA VERSION**
-in future I will add role functions, so you can store different characters of gemini.
+~~in future I will add role functions, so you can store different characters of gemini.~~
+In future, i will develop role functions, so you can create your own trained models.
+
